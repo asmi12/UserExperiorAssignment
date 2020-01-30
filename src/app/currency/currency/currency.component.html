@@ -1,0 +1,33 @@
+<br>
+<select style="width:50%"formControlName="branch" (click)="onChange($event.target.value)" class="form-control"> 
+  <option value=select>Select</option>
+    <option [value]= "data.alpha3Code" *ngFor='let data of details'>{{data.name}}</option>
+    </select>
+    <br>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">No.</th>
+        <th scope="col">Name</th>
+        <th scope="col">Code</th>
+        <th scope="col">Symbol</th>
+      
+      </tr>
+    </thead>
+    <tbody *ngFor='let item of currencyData,let i=index'>
+        <div class="d-flex justify-content-center" >
+            <div class="spinner-border"style="margin-left: 280px;" [style.display]="loading ? 'block' : 'none'">
+              <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <tr>
+            <td>{{i+1}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.code}}</td>
+            <td>{{item.symbol}}</td>
+          
+          </tr>
+   
+     
+    </tbody>
+  </table>

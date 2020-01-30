@@ -1,0 +1,40 @@
+<br>
+<div class="form-group">
+  <select style='width:50%' formControlName="branch" (click)="onChange($event.target.value)" class="form-control"> 
+    <option value=select>Select</option>
+      <option [value]= "data.alpha3Code" *ngFor='let data of countryLst'>{{data.name}}</option>
+      </select>
+      <br>
+<table class="table table-striped">
+    <thead>
+      <tr>
+      
+        <th scope="col">Country Name</th>
+        <th scope="col">Capital</th>
+        <th scope="col">Region</th>
+        <th scope="col">Sub Region</th>
+        <th scope="col">Population</th>
+        <th scope="col">Area</th>
+        <th scope="col">Alpha 3 code</th>
+      </tr>
+    </thead>
+    <tbody>
+        <div class="d-flex justify-content-center" >
+            <div class="spinner-border"style="margin-left: 280px;" [style.display]="loading ? 'block' : 'none'">
+              <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <tr>
+         
+            <td>{{name}}</td>
+            <td>{{capital}}</td>
+            <td>{{region}}</td>
+            <td>{{subregion}}</td>
+            <td>{{population}}</td>
+            <td>{{area}}</td>
+            <td>{{alpha3Code}}</td>
+          </tr>
+   
+     
+    </tbody>
+  </table>

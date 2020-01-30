@@ -1,0 +1,37 @@
+<br>
+
+<select style='width:50%' formControlName="branch" (click)="onChange($event.target.value)" class="form-control"> 
+  <option value=select>Select</option>
+    <option [value]= "data.alpha3Code" *ngFor='let data of details'>{{data.name}}</option>
+    </select>
+    <br>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">No.</th>
+        <th scope="col">Name</th>
+        <th scope="col">Native Name</th>
+       
+      
+      </tr>
+    </thead>
+   
+
+    <tbody>
+        <div class="d-flex justify-content-center" >
+            <div class="spinner-border"style="margin-left: 280px;" [style.display]="loading ? 'block' : 'none'">
+              <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+          
+        <tr *ngFor='let item of languageData,let i=index;'>
+           <td>{{i+1}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.nativeName}}</td>
+           
+          
+          </tr>
+   
+     
+    </tbody>
+  </table>
